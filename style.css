@@ -24,6 +24,11 @@ button{
     padding: .6rem 1.2rem;
     border-radius: 2.5rem;
     margin-left: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+}
+button:hover{
+    transform: scale(1.1);
 }
 .btn-secondary{
     background-color: transparent;
