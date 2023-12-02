@@ -5,8 +5,10 @@
     color: white;
 }
 :root{
-    --bg-dark-primary: #121212;
-    --bg-dark-secondary: #212121;
+    --bg-dark-primary: #000000;
+    --bg-dark-secondary: #121212;
+    --bg-gray: #171717;
+    --bg-gray-hover:#282828;
     --font-primary: 'Robot', sans-serif;
 }
 
@@ -52,8 +54,13 @@ p{
     font-family: var(--font-primary);
 
 }
+.container{
+    background-color: var(--bg-dark-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+}
 .parent{
-    width: 95%;
+    width: 99%;
     margin: 1rem auto;
 }
 
@@ -70,40 +77,54 @@ p{
 
 /* header start here  */
 .left{
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     /* background-color: gray; */
-    width: 20%;
+    width: 22.5%;
 }
+.left .container {
+    margin: 0 0 .5rem 0;
+}
+
+.left .container .logo{
+    margin: 0 0 1rem 0;
+}
+
+
 .left .logo{
     width: 100%;
 }
 .left img{
-    width: 12%;
+    width: 8%;
 }
 .left .navbar{
     width: 50%;
     /* background-color: red; */
 }
-.left .navbar ul li{
+.left ul{
+
+}
+.left  ul li{
     list-style: none;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     font-family: var(--font-primary);
 }
-.left .navbar ul i {
+.left  ul i {
     
     margin:.5rem 1rem 0 0;
     font-size: 1.2rem;
 
 }
+
 /* header ends here  */
 
 /* right start here  */
 .right{
-    padding: .5rem;
+    /* padding: .5rem; */
     background-color: var(--bg-dark-secondary);
-    width: 80%;
+
+    width: 77%;
     min-height: 100vh;
-   border-radius: .3rem;
+    border-radius: 10px;
 }
 
 /* chevron starts here  */
@@ -129,12 +150,19 @@ p{
 /* banner starts here  */
 
 .right .banner{
-    width: 100%;
-    height: 40vh;
     background-image: url(./assets/banner.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    min-height: 30vh;
+    margin: 0 1rem ;
+
+}
+.right .banner img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+
 }
 /* banner ends here  */
 
@@ -144,15 +172,34 @@ p{
     margin: 1.6rem 0;
 }
 .cardRow .card{
-    width: 18%;
+    width: 13%;
+    padding: 1rem;
+    background-color: var(--bg-gray);
+    border-radius: 10px;
+    transition: all ease-in-out 400ms;
+
     
 }
-.cardRow .card .topImg{
+.cardRow .card:hover{
+
+    background-color: var(--bg-gray-hover);
+    cursor: pointer;
+
+    
+}
+
+.cardRow .card .cardImg{
     width: 100%;
+    border-radius: 10px;
 
 }
 .cardRow .card img{
-    width: 100%
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
 }
+
+
+
 /* .cardRow ends here */
 /* right start here  */
