@@ -1,7 +1,6 @@
-import data from './data'
 
-function card(){
-    return console.log(data)
+
+
+async function apiUrl ('//musicapi13.p.rapidapi.com/public/search/introspection'){
 
 }
-card()

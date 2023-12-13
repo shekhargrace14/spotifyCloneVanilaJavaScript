@@ -77,8 +77,9 @@
                 </div>
                 <div class="row d-flex justify-between">
 
-                    <div class="card">
-                        <a href="../pages/songpage.html">
+
+                    <!-- <div class="card user">
+                       <a href="../pages/songpage.html">
                             <div class="cardInner">
 
                                 <div class="cardImg">
@@ -90,81 +91,13 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                    <div class="card">
-                        <a href="../pages/songpage.html">
-                            <div class="cardInner">
+                    </div> -->
 
-                                <div class="cardImg">
-                                    <img src="./assets/cardImg.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Mithoon Radio</h4>
-                                    <p>By Spotify</p>
-                                </div>
-                            </div>
-                        </a>
+                    <div id="root">
+
                     </div>
 
-                    <div class="card">
-                        <a href="../pages/songpage.html">
-                            <div class="cardInner">
 
-                                <div class="cardImg">
-                                    <img src="./assets/cardImg.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Mithoon Radio</h4>
-                                    <p>By Spotify</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a href="../pages/songpage.html">
-                            <div class="cardInner">
-
-                                <div class="cardImg">
-                                    <img src="./assets/cardImg.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Mithoon Radio</h4>
-                                    <p>By Spotify</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a href="../pages/songpage.html">
-                            <div class="cardInner">
-
-                                <div class="cardImg">
-                                    <img src="./assets/cardImg.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Mithoon Radio</h4>
-                                    <p>By Spotify</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a href="../pages/songpage.html">
-                            <div class="cardInner">
-
-                                <div class="cardImg">
-                                    <img src="./assets/cardImg.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Mithoon Radio</h4>
-                                    <p>By Spotify</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
 
                    
                     
@@ -176,5 +109,41 @@
         <!-- right ends here  -->
 
     </div >
+    <script>
+        // fetch('data.json')
+        // .then((response) =>{
+        //     return response.json()
+        // })
+        // .then((data)=>{
+        //     console.log(data)
+        // })
+        // console.log("Hello ")
+
+        const url = 'https://spotify-web2.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5';
+        const options = {
+        	method: 'GET',
+        	headers: {
+        		'X-RapidAPI-Key': '8daf2f4636mshb774ac6f6c60c23p1aaec6jsnf9af23420a22',
+        		'X-RapidAPI-Host': 'spotify-web2.p.rapidapi.com'
+        	}
+        };
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then( response => response.json())
+        .then( (data)  =>{
+
+            // console.log(data)
+            for(i=0; i<=data.length; i++){
+
+                console.log(data[i])
+                let dataInHtml=`<div class="con"><h2 id="${data[i].id}">${data[i].username}</h2><p class="Spon">${data[i].email} </p></div>`;
+                    
+                document.getElementById("#root").append(dataInHtml);
+            }
+           
+        }) 
+        
+
+    </script>
 </body>
 </html>
